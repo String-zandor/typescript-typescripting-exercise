@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>City Directory</title>
+
+</head>
+
+<body>
+    <form action="">
+        <table>
+            <tr>
+                <td><label for="city">City Name: </label></td>
+                <td><input type="text" id="city" /></td>
+            </tr>
+            <tr>
+                <td><label for="country">Country: </label></td>
+                <td><input type="text" id="country" /></td>
+            </tr>
+            <tr>
+                <td><label for="population">Population: </label></td>
+                <td><input type="number" id="population" /></td>
+            </tr>
+        </table>
+
+        <br>
+        <input type="reset" value="Add To Directory" onclick="addCity(document.getElementById('city').value, 
+                        document.getElementById('country').value, 
+                        document.getElementById('population').value)"  />
+        <input type="button" value="View Directory" onclick="searchAndView()" />
+    </form>
+
+    <br><br>
+    <input type="text" id="search" />
+    <button onclick="searchAndView(document.getElementById('search').value)">
+        Search
+    </button>
+
+    <br><br>
+    <label for="searchAlt">Active Search (press down arrow to finalize):</label><br>
+    <input type="text" id="searchAlt" onkeydown="searchAndView(document.getElementById('searchAlt').value)" />
+
+
+    <h3>List of Cities</h3>
+    <div>
+        <ul id="city-directory"></ul>
+    </div>
+
+    <script>var exports = { "__esModule": { value: true } }</script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
